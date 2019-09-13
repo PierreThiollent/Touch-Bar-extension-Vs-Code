@@ -13,14 +13,29 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
+	// On définit une commande pour Beautify
+	let beautify = vscode.commands.registerCommand('extension.Beautify', () => {
+		vscode.commands.executeCommand('HookyQR.beautify');
 	});
 
-	context.subscriptions.push(disposable);
+	// On définit une commande pour Php fmt
+	// let phpfmt = vscode.commands.registerCommand('extension.phpfmt', () => {
+	// 	vscode.commands.executeCommand('HookyQR.beautify');
+	// });
+
+	// Commande pour commenter une ligne
+	let commentLine = vscode.commands.registerCommand('extension.commentLine', () => {
+		vscode.commands.executeCommand('editor.action.addCommentLine');
+	});
+
+	// Commande pour decommenter une ligne
+	let removeCommentLine = vscode.commands.registerCommand('extension.removeCommentLine', () => {
+		vscode.commands.executeCommand('editor.action.removeCommentLine');
+	});
+
+
+	context.subscriptions.push(beautify, commentLine, removeCommentLine);
 }
 
 // this method is called when your extension is deactivated

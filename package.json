@@ -9,17 +9,43 @@
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [
-		"onCommand:extension.helloWorld"
-	],
+	"activationEvents": ["*"],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.Beautify",
+				"title": "Beautify"
+			},
+			{
+				"command": "extension.commentLine",
+				"title": "Comment Line"
+			},
+			{
+				"command": "extension.removeCommentLine",
+				"title": "Uncomment Line"
+			},
+			{
+				"command": "extension.phpfmt",
+				"title": "Format PHP"
 			}
-		]
+		],
+		"menus": {
+			"touchBar": [
+				{
+					"command": "extension.Beautify",
+					"group": "editing"
+				}, 
+				{
+					"command": "extension.commentLine",
+					"group": "editing"
+				},
+				{
+					"command": "extension.removeCommentLine",
+					"group": "editing"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
