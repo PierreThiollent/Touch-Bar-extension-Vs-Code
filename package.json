@@ -14,34 +14,41 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.Beautify",
-				"title": "Beautify"
-			},
-			{
 				"command": "extension.commentLine",
-				"title": "Comment Line"
+				"title": "/ /"
 			},
 			{
-				"command": "extension.removeCommentLine",
-				"title": "Uncomment Line"
+				"command": "extension.Beautify",
+				"title": "Indent JS", 
+				"icon" : "./assets/indent.png"
 			},
 			{
 				"command": "extension.phpfmt",
-				"title": "Format PHP"
+				"title": "Format PHP",
+				"icon" : "./assets/right-indent.png"
+			}, 
+			{
+				"command": "extension.newFile",
+				"title": "New File",
+				"icon" : "./assets/add-file.png"
 			}
 		],
 		"menus": {
 			"touchBar": [
 				{
-					"command": "extension.Beautify",
-					"group": "editing"
-				}, 
-				{
 					"command": "extension.commentLine",
 					"group": "editing"
 				},
 				{
-					"command": "extension.removeCommentLine",
+					"command": "extension.Beautify",
+					"group": "editing"
+				}, 
+				{
+					"command": "extension.phpfmt",
+					"group": "editing"
+				}, 
+				{
+					"command": "extension.newFile",
 					"group": "editing"
 				}
 			]
